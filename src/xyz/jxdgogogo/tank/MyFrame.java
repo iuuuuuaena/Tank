@@ -5,7 +5,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * @Author jxd
@@ -18,17 +18,21 @@ public class MyFrame extends Frame {
     // 坦克
     public Tank tank;
     public Bullet bullet;
+
+    public ArrayList<Bullet> bulletList = new ArrayList<>();
+    private final static int WIDTH = 800, HEIGHT = 600;
+
     public MyFrame() {
         // 显示一个窗口
 
-        tank = new Tank(100,90,Dir.DOWN);
-        bullet = new Bullet(200,150,Dir.DOWN);
+        tank = new Tank(100, 90, Dir.DOWN, this);
+        bullet = new Bullet(200, 150, Dir.DOWN);
 
         // 可设置大小
         setResizable(true);
-        setLocation(300,300);
+        setLocation(300, 300);
         // 设置窗口大小
-        setSize(500, 400);
+        setSize(WIDTH, HEIGHT);
         // 设置窗口标题
         setTitle("坦克大战");
         // 设置可见
@@ -58,7 +62,34 @@ public class MyFrame extends Frame {
     public void paint(Graphics g) {
         // 把画笔交给坦克
         tank.paint(g);
-        bullet.paint(g);
+        for (Bullet b : bulletList) {
+            b.paint(g);
+        }
+
+    }
+
+
+    // 重写父类的update方法，这个方法在paint之前被调用
+    // 所以我们可以重写这个方法，然后解决闪烁问题
+    // 本质是，重写父类的updata方法，然后自己写一张图片，把图片画完之后，在把图片显示出来，解决闪烁问题
+    Image image = null;
+
+    @Override
+    public void update(Graphics g) {
+        if (image == null) {
+            image = this.createImage(WIDTH, HEIGHT);
+        }
+
+        Graphics g2 = image.getGraphics();
+
+        Color c = g2.getColor();
+        g2.setColor(Color.BLACK);
+
+        g2.fillRect(0, 0, WIDTH, HEIGHT);
+        g2.setColor(c);
+
+        print(g2);
+        g.drawImage(image, 0, 0, null);
     }
 
 
@@ -120,6 +151,10 @@ public class MyFrame extends Frame {
                 case KeyEvent.VK_DOWN:
                     bD = false;
                     break;
+                //    发射子弹
+                case KeyEvent.VK_SPACE:
+                    tank.fire();
+                    break;
                 default:
                     break;
             }
@@ -132,9 +167,9 @@ public class MyFrame extends Frame {
         public void setTankLocation() {
             // 开始移动
 
-            if(!bL && !bR && !bU && !bD) {
+            if (!bL && !bR && !bU && !bD) {
                 tank.setMoving(false);
-            }else {
+            } else {
                 tank.setMoving(true);
                 if (bL) tank.setDir(Dir.LEFT);
                 if (bR) tank.setDir(Dir.RIGHT);

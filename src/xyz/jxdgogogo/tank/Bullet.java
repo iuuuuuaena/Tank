@@ -12,11 +12,14 @@ import java.awt.*;
 public class Bullet {
 
     private final static int SPEED = 10;
-    private final static int WIDTH = 5, HEIGHT = 5;
+    private final static int WIDTH = 20, HEIGHT = 20;
 
     private int x, y;
 
     private Dir dir;
+
+    //子弹的状态
+    private boolean  isLive = false;
 
     public Bullet(int x, int y, Dir dir) {
         this.x = x;
@@ -28,7 +31,7 @@ public class Bullet {
 
         //颜色
         Color color = g.getColor();
-        g.setColor(Color.BLUE);
+        g.setColor(Color.RED);
         // 绘制圆
         g.fillOval(x, y, WIDTH, HEIGHT);
         g.setColor(color);
