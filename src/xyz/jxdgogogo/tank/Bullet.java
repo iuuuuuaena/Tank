@@ -18,16 +18,24 @@ public class Bullet {
 
     private Dir dir;
 
-    //子弹的状态
-    private boolean  isLive = false;
+    private MyFrame my = null;
 
-    public Bullet(int x, int y, Dir dir) {
+    //子弹的状态
+    private boolean isLive = true;
+
+    public Bullet(int x, int y, Dir dir,MyFrame my) {
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.my = my;
     }
 
     public void paint(Graphics g) {
+
+        //如果子弹死了
+        if (!isLive){
+            my.bulletList.remove(this);
+        }
 
         //颜色
         Color color = g.getColor();
@@ -58,6 +66,7 @@ public class Bullet {
             default:
                 break;
         }
+        if (x <= 0 || y <= 0 || x > MyFrame.SCREEN_WIDTH || y > MyFrame.SCREEN_HEIGHT) isLive = false;
     }
 
 

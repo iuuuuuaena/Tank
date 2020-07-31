@@ -29,7 +29,6 @@ public class Tank {
     //    坦克自己的绘制方法
     public void paint(Graphics g) {
         // g就是画笔 ，想画什么就画什么
-        System.out.println("");
         Color color = g.getColor();
         g.setColor(Color.YELLOW);
         /*绘制矩形*/
@@ -70,7 +69,7 @@ public class Tank {
     public void fire(){
        // 设置窗口的bullet子弹对象
        // 从list里面把所有的子弹拿出来
-       my.bulletList.add(new Bullet(this.x+ 15,this.y + 15,this.dir));
+       my.bulletList.add(new Bullet(this.x+ 15,this.y + 15,this.dir,this.my));
 
     }
 

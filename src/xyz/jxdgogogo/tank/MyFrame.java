@@ -17,22 +17,20 @@ import java.util.ArrayList;
 public class MyFrame extends Frame {
     // 坦克
     public Tank tank;
-    public Bullet bullet;
 
     public ArrayList<Bullet> bulletList = new ArrayList<>();
-    private final static int WIDTH = 800, HEIGHT = 600;
+    public  final static int SCREEN_WIDTH = 800, SCREEN_HEIGHT = 600;
 
     public MyFrame() {
         // 显示一个窗口
 
         tank = new Tank(100, 90, Dir.DOWN, this);
-        bullet = new Bullet(200, 150, Dir.DOWN);
 
         // 可设置大小
         setResizable(true);
         setLocation(300, 300);
         // 设置窗口大小
-        setSize(WIDTH, HEIGHT);
+        setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         // 设置窗口标题
         setTitle("坦克大战");
         // 设置可见
@@ -60,10 +58,17 @@ public class MyFrame extends Frame {
      */
     @Override
     public void paint(Graphics g) {
+        Color color = g.getColor();
+        // 显示子弹的数量
+        g.setColor(Color.WHITE);
+        g.drawString("子弹的数量"  +bulletList.size(),  10,60);
+        g.setColor(color);
+
         // 把画笔交给坦克
         tank.paint(g);
-        for (Bullet b : bulletList) {
-            b.paint(g);
+        // 消除子弹的内存泄露问题
+        for (int i = 0;i< bulletList.size();i++) {
+            bulletList.get(i).paint(g);
         }
 
     }
@@ -77,15 +82,12 @@ public class MyFrame extends Frame {
     @Override
     public void update(Graphics g) {
         if (image == null) {
-            image = this.createImage(WIDTH, HEIGHT);
+            image = this.createImage(SCREEN_WIDTH, SCREEN_WIDTH);
         }
-
         Graphics g2 = image.getGraphics();
-
         Color c = g2.getColor();
         g2.setColor(Color.BLACK);
-
-        g2.fillRect(0, 0, WIDTH, HEIGHT);
+        g2.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         g2.setColor(c);
 
         print(g2);
