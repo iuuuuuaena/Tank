@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3fc627e-11f0-41f6-a607-1bac4d208d1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Dir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Tank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tank/xyz/jxdgogogo/tank/MyFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank/xyz/jxdgogogo/tank/MyFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tank/xyz/jxdgogogo/tank/MyFrame$MyKeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank/xyz/jxdgogogo/tank/MyFrame$MyKeyListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tank/xyz/jxdgogogo/tank/MyFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tank/xyz/jxdgogogo/tank/MyFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/MyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Tank.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/LearnFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="39" column="5" selection-start-line="16" selection-start-column="3" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="212">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,16 +37,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/MyFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-53">
-              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="734">
+              <caret line="59" column="22" lean-forward="true" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#682#860#0" expanded="true" />
                 <element signature="e#859#860#0" expanded="true" />
-                <element signature="method#paint#0;class#MyFrame#0" />
               </folding>
             </state>
           </provider>
@@ -55,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="-10">
+              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
               <folding>
                 <element signature="e#870#871#0" expanded="true" />
                 <element signature="e#894#895#0" expanded="true" />
@@ -73,6 +72,15 @@
                 <element signature="e#1376#1377#0" expanded="true" />
                 <element signature="e#1412#1413#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Bullet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -162,6 +170,7 @@
         <option value="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Dir.java" />
         <option value="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/MyFrame.java" />
         <option value="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Tank.java" />
+        <option value="$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Bullet.java" />
       </list>
     </option>
   </component>
@@ -273,7 +282,7 @@
       <workItem from="1595589293006" duration="792000" />
       <workItem from="1595598036705" duration="51000" />
       <workItem from="1595598093690" duration="43000" />
-      <workItem from="1596154575457" duration="3315000" />
+      <workItem from="1596154575457" duration="4330000" />
     </task>
     <task id="LOCAL-00001" summary="V0.1 --键盘监听事件的测试key event">
       <created>1596156494327</created>
@@ -282,11 +291,18 @@
       <option name="project" value="LOCAL" />
       <updated>1596156494327</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="V0.2 --封装tank类，封装移动方法，给坦克设置移动或静止属性">
+      <created>1596158282866</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596158282866</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5974000" />
+    <option name="totallyTimeSpent" value="6989000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -301,13 +317,13 @@
       <window_info id="Favorites" order="6" sideWeight="0.50097847" side_tool="true" weight="0.2639485" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939634" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32939634" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32939634" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" visible="true" weight="0.32939634" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.32939634" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.32939634" />
@@ -328,7 +344,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="V0.1 --键盘监听事件的测试key event" />
-    <option name="LAST_COMMIT_MESSAGE" value="V0.1 --键盘监听事件的测试key event" />
+    <MESSAGE value="V0.2 --封装tank类，封装移动方法，给坦克设置移动或静止属性" />
+    <option name="LAST_COMMIT_MESSAGE" value="V0.2 --封装tank类，封装移动方法，给坦克设置移动或静止属性" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
@@ -356,27 +373,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/LearnFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="39" column="5" selection-start-line="16" selection-start-column="3" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Dir.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -387,10 +387,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/LearnFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="-10">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
           <folding>
             <element signature="e#870#871#0" expanded="true" />
             <element signature="e#894#895#0" expanded="true" />
@@ -412,14 +422,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/MyFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="734">
+          <caret line="59" column="22" lean-forward="true" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#682#860#0" expanded="true" />
             <element signature="e#859#860#0" expanded="true" />
-            <element signature="method#paint#0;class#MyFrame#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Dir.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xyz/jxdgogogo/tank/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
         </state>
       </provider>
     </entry>

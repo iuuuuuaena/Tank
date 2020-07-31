@@ -17,13 +17,16 @@ import java.util.HashMap;
 public class MyFrame extends Frame {
     // 坦克
     public Tank tank;
+    public Bullet bullet;
     public MyFrame() {
         // 显示一个窗口
 
-        tank = new Tank(200,200,Dir.DOWN);
+        tank = new Tank(100,90,Dir.DOWN);
+        bullet = new Bullet(200,150,Dir.DOWN);
 
         // 可设置大小
         setResizable(true);
+        setLocation(300,300);
         // 设置窗口大小
         setSize(500, 400);
         // 设置窗口标题
@@ -55,6 +58,7 @@ public class MyFrame extends Frame {
     public void paint(Graphics g) {
         // 把画笔交给坦克
         tank.paint(g);
+        bullet.paint(g);
     }
 
 
@@ -129,7 +133,7 @@ public class MyFrame extends Frame {
             // 开始移动
 
             if(!bL && !bR && !bU && !bD) {
-                return ;
+                tank.setMoving(false);
             }else {
                 tank.setMoving(true);
                 if (bL) tank.setDir(Dir.LEFT);

@@ -13,10 +13,12 @@ public class Tank {
 
     //    位置
     private int x, y;
+    //坦克大小
+    private final static int WIDTH = 70,HEIGHT = 60;
     //    方向
     private Dir dir;
     //    速度
-    private final static int SPEED = 10;
+    private final static int SPEED = 5;
     //  移动状态
     private boolean moving = false;
 
@@ -25,7 +27,8 @@ public class Tank {
     public void paint(Graphics g) {
         // g就是画笔 ，想画什么就画什么
         System.out.println("");
-        g.fillRect(x, y, 100, 100);
+        /*绘制矩形*/
+        g.fillRect(x,y, WIDTH, HEIGHT);
         //移动
         move();
     }
@@ -41,10 +44,10 @@ public class Tank {
                 x += SPEED;
                 break;
             case UP:
-                y += SPEED;
+                y -= SPEED;
                 break;
             case DOWN:
-                y -= SPEED;
+                y += SPEED;
                 break;
             default:
                 break;
