@@ -15,19 +15,17 @@ import java.util.HashMap;
  * @Email waniiu@126.com
  */
 public class MyFrame extends Frame {
-
-    // 方块的位置
-    private  int x = 200,y = 200;
-
-
+    // 坦克
+    public Tank tank;
     public MyFrame() {
         // 显示一个窗口
 
+        tank = new Tank(200,200,Dir.DOWN);
 
         // 可设置大小
         setResizable(true);
         // 设置窗口大小
-        setSize(500,400);
+        setSize(500, 400);
         // 设置窗口标题
         setTitle("坦克大战");
         // 设置可见
@@ -50,25 +48,18 @@ public class MyFrame extends Frame {
     /**
      * 重写父类的print方法，会给我一个画笔
      * // 窗口需要重新绘制的时候，自动调用这个方法
-     * @param g  画笔
+     *
+     * @param g 画笔
      */
     @Override
     public void paint(Graphics g) {
-
-        // g就是画笔 ，想画什么就画什么
-        // HashMap
-
-        System.out.println("");
-        g.fillRect(x,y,100,100);
-        //
-        // x += 1;
-        // y += 20;
+        // 把画笔交给坦克
+        tank.paint(g);
     }
 
 
-
     // 键盘事件内部类
-    class  MyKeyListener extends KeyAdapter{
+    class MyKeyListener extends KeyAdapter {
         // 四个方向，让坦克根据四个方向，走
         boolean bL = false;
         boolean bR = false;
@@ -80,9 +71,9 @@ public class MyFrame extends Frame {
         public void keyPressed(KeyEvent e) {
 
             // 取出key的具体事件
-            int key  = e.getKeyCode();
+            int key = e.getKeyCode();
 
-            switch(key){
+            switch (key) {
                 // 左
                 case KeyEvent.VK_LEFT:
                     bL = true;
@@ -99,8 +90,8 @@ public class MyFrame extends Frame {
                 default:
                     break;
             }
+            setTankLocation();
         }
-
 
 
         // 键弹起的时候，回调
@@ -109,9 +100,9 @@ public class MyFrame extends Frame {
 
 
             // 取出key的具体事件
-            int key  = e.getKeyCode();
+            int key = e.getKeyCode();
             // 弹起的时候，设置为false;
-            switch(key){
+            switch (key) {
                 // 左
                 case KeyEvent.VK_LEFT:
                     bL = false;
@@ -129,8 +120,27 @@ public class MyFrame extends Frame {
                     break;
             }
 
+            setTankLocation();
+
         }
+
+        //判断方向
+        public void setTankLocation() {
+            // 开始移动
+
+            if(!bL && !bR && !bU && !bD) {
+                return ;
+            }else {
+                tank.setMoving(true);
+                if (bL) tank.setDir(Dir.LEFT);
+                if (bR) tank.setDir(Dir.RIGHT);
+                if (bU) tank.setDir(Dir.UP);
+                if (bD) tank.setDir(Dir.DOWN);
+            }
+        }
+
     }
+
 
 }
 
